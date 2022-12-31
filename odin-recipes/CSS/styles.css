@@ -1,0 +1,24 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  background-color: #788676;
+  color: white;
+  border: 5px solid black;
+  border-left: 0;
+  border-top: 0;
+  border-bottom : 0;
+}
+
+img {
+  margin: 0px 30%;
+  width: 40%;
+  height: auto;
+}
+
+ul,
+ol {
+  background-color: rgba(237, 237, 237, 0.719);
+}
