@@ -1,8 +1,13 @@
-var prompt = require("readline-sync");
-
 const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
+
+let playerChoice, computerChoice;
+let playerScore = 0,
+  computerScore = 0;
+
+const btns = document.querySelectorAll("button");
+btns.forEach((button) => button.addEventListener("click", startRound));
 
 function getComputerChoice() {
   const choice = Math.floor(Math.random() * 3);
@@ -11,35 +16,52 @@ function getComputerChoice() {
   return SCISSORS;
 }
 
-function playRound(computerSelection, playerSelection) {
+function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
-  if (computerSelection === playerSelection) return "Tie";
+  if (computerSelection === playerSelection) game("Tie");
   else if (computerSelection === "rock" && playerSelection === "scissors")
-    return "you lose, rock defeats scissors";
+    game("You Lose, Rock defeats Scissors");
   else if (computerSelection === "scissors" && playerSelection === "paper")
-    return "you lose, scissors defeats paper";
+    game("You Lose, Scissors defeats Paper");
   else if (computerSelection === "paper" && playerSelection === "rock")
-    return "you lose, paper defeats rock";
-
-  return "Whoa Whoa Whoa! You Won";
+    game("You Lose, Paper defeats Rock");
+  else game("You Won");
 }
 
-function game() {
-  for (let i = 0, j = 0; i < 5 || j < 5; ) {
-    let choice = prompt.question("Enter your Choice: ");
-    let result = playRound(getComputerChoice(), choice);
+function startRound(e) {
+  playerChoice = e.target.textContent;
+  playRound(playerChoice, getComputerChoice());
+}
 
-    if (result === "Tie") {
-      console.log(result);
-      continue;
-    } else if (result.includes("Won")) {
-      i++;
-      console.log(`${result}\nScores = ${i}: ${j}`);
-    } else {
-      j++;
-      console.log(`${result}\nScores = ${i}: ${j}`);
-    }
+function game(state) {
+  const p = document.querySelector("p");
+  if (state.includes("Won")) {
+    playerScore++;
+  } else if (state.includes("Lose")) {
+    computerScore++;
+  }
+
+  p.textContent = `${state}
+  Scores: ${playerScore} - ${computerScore}`;
+
+  if (computerScore > 4) {
+    document.querySelector(
+      "h2"
+    ).textContent = `\nWinner is Computer and the game will restart \n
+    new Scores = 0 : 0`;
+    computerScore = 0;
+    playerScore = 0;
+  }
+  if (playerScore > 4) {
+    document.querySelector(
+      "h2"
+    ).textContent = `\nWinner is Computer and the game will restart \n
+    new Scores = 0 : 0`;
+    computerScore = 0;
+    playerScore = 0;
   }
 }
 
-game();
+function reset() {
+  
+}
