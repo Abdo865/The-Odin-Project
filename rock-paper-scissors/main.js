@@ -45,23 +45,15 @@ function game(state) {
   Scores: ${playerScore} - ${computerScore}`;
 
   if (computerScore > 4) {
-    document.querySelector(
-      "h2"
-    ).textContent = `\nWinner is Computer and the game will restart \n
-    new Scores = 0 : 0`;
-    computerScore = 0;
-    playerScore = 0;
+    document.querySelector("h2").textContent =
+      "Winner is Computer Restart to play again";
+      btns.forEach(btn=>btn.disabled = true);
   }
   if (playerScore > 4) {
-    document.querySelector(
-      "h2"
-    ).textContent = `\nWinner is Computer and the game will restart \n
-    new Scores = 0 : 0`;
-    computerScore = 0;
-    playerScore = 0;
+    document.querySelector("h2").textContent =
+      "You are The Winner Restart to Play Again";
+    btns.forEach((btn) => btn.disabled = true);
   }
 }
 
-function reset() {
-  
-}
+function reset() {}
