@@ -54,6 +54,5 @@ function game(state) {
       "You are The Winner Restart to Play Again";
     btns.forEach((btn) => btn.disabled = true);
   }
-}
 
 function reset() {}
