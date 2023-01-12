@@ -1,0 +1,71 @@
+.grid {
+	border: 4px solid black;
+	border-radius: 8px;
+	border-top-left-radius: 0;
+}
+
+.child {
+	background-color: white;
+	border: 1px solid rgba(169, 169, 209, 0.106);
+	flex: 1 1 auto;
+}
+
+/* .visited {
+	background-color: black;
+} */
+
+.content {
+	display: flex;
+	justify-content: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	font-family: "Courier New", Courier, monospace;
+	background-color: rgb(250, 43, 43);
+}
+
+.color {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.number {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.grid-info {
+	background-color: black;
+	color: white;
+	border: 20px solid black;
+	border-bottom-left-radius: 16px;
+	border-top-left-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 400px;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 6%;
+}
+
+.apply {
+	background-color: white;
+	border: 0;
+	color: black;
+	border-radius: 6px;
+	width: 100%;
+}
+
+.eraser {
+	background-color: white;
+	border: 0;
+	color: black;
+	border-radius: 6px;
+	width: 50%;
+}

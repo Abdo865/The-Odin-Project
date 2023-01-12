@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Etch-A-Sketch</title>
+		<script src="code.js" defer></script>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1>Etch a Sketch</h1>
+		<div class="content">
+			<div class="grid-info">
+				<div class="color">
+					Pick Color
+					<input type="color" class="change-color" />
+				</div>
+				<div class="number">
+					<div class="grid-size"></div>
+					<input
+						type="range"
+						min="16"
+						max="64"
+						value="16"
+						class="boxes-number" />
+					<button class="apply">Apply or Reset</button>
+				</div>
+				<button class="eraser">Eraser</button>
+			</div>
+			<div class="grid"></div>
+			<div class="visited"></div>
+		</div>
+	</body>
+</html>
